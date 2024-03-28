@@ -1,0 +1,424 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.loginC {
+  background-color: white;
+  width: 50vw;
+  height: 100vh;
+}
+.blank {
+  background: var(--d--colors-semantic-primary, #0166ff);
+  width: 50vw;
+  height: 100vh;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25%;
+}
+.wlcm {
+  font-family: sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+.wlcm bck {
+  font-family: sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+}
+.input {
+  gap: 13px;
+  border-radius: var(--t--borders-radius-rounded-lg, 8px);
+  border: 1px solid var(--d--colors-base-base-300, #d1d5db);
+  background: var(--d--colors-base-base-100, #f3f4f6);
+  width: 300px;
+  height: 30px;
+}
+.input {
+  gap: 13px;
+  border-radius: var(--t--borders-radius-rounded-lg, 8px);
+  border: 1px solid var(--d--colors-base-base-300, #d1d5db);
+  background: var(--d--colors-base-base-100, #f3f4f6);
+  width: 300px;
+}
+.inputc {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.sgnup {
+  background-color: #0166ff;
+  border-radius: 20px;
+  height: 28px;
+  border: transparent solid;
+  color: white;
+}
+.wlcm_bck {
+  font-size: 16p;
+  font-family: sans-serif;
+}
+.login_btn {
+  width: 306px;
+  height: 30px;
+  border-radius: 20px;
+  border-radius: var(--t--borders-radius-rounded-lg, 8px);
+  border: 1px solid var(--d--colors-base-base-300, #d1d5db);
+  background: #0166ff;
+  color: white;
+}
+.to_signup {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.ancher {
+  color: #0166ff;
+}
+.to_login {
+  border-radius: var(--t--borders-radius-rounded-lg, 8px);
+  border: 1px solid var(--d--colors-base-base-300, #d1d5db);
+  background: var(--d--colors-base-base-100, #f3f4f6);
+  width: 300px;
+  height: 30px;
+}
+.NavContainer {
+  font-family: sans-serif;
+}
+.Recdiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 30px;
+  align-items: center;
+  padding-top: 15px;
+  padding-left: 120px;
+}
+.Main {
+  background-color: #f3f4f6;
+  height: 100vmax;
+}
+.ExIn {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+.avatar {
+  align-items: center;
+  display: flex;
+}
+.div {
+  display: flex;
+  align-items: center;
+}
+.DoughChart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+.LastRecord {
+  margin-top: 50px;
+}
+.GeldExIn {
+  display: flex;
+  flex-direction: row;
+  font-family: sans-serif;
+}
+.InExContainer {
+  display: flex;
+}
+.Incomediv {
+  width: 384px;
+  height: 216px;
+  top: 104px;
+  left: 528px;
+}
+.Expensediv {
+  display: flex;
+  flex-direction: column;
+  padding-left: 270px;
+}
+.InTop {
+  background-color: white;
+  border-radius: 10px;
+  width: 384px;
+  height: 56px;
+  border: 0px, 0px, 1px, 0px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  border: rgba(226, 232, 240, 1) solid;
+}
+.InBottom {
+  background-color: white;
+  border-radius: 10px;
+  width: 384px;
+  height: 156px;
+  padding: 20px, 24px, 24px, 24px;
+  gap: 16px;
+  border: rgba(226, 232, 240, 1) solid;
+}
+.InAmount2 {
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.UpFromMonth {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+.write {
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+}
+.MainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Header {
+  width: 1200px;
+  height: 70px;
+  padding-left: 15px;
+  background-color: white;
+  border: rgba(226, 232, 240, 1) solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.bodydiv {
+  display: flex;
+  flex-direction: column;
+}
+.MinusCash {
+  display: flex;
+  margin-left: 950px;
+}
+.cat {
+  width: 1200px;
+  height: 70px;
+  padding-left: 15px;
+  margin-top: 10px;
+  background-color: white;
+  border: rgba(226, 232, 240, 1) solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.dog {
+  display: flex;
+  padding-left: 18px;
+  text-align: center;
+}
+.trans {
+  padding-bottom: 2px;
+}
+.time {
+  padding-top: 2px;
+}
+.line {
+  height: 0.000001px;
+  width: 1000px;
+  display: flex;
+  border: red solid;
+}
+.LastRecordAmount {
+  display: flex;
+  justify-content: end;
+  padding-left: 1025px;
+  line-height: 16px;
+  color: green;
+  text-align: center;
+}
+.Amount {
+  display: flex;
+  justify-content: end;
+}
+.RecordNavbar {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: 75px;
+  padding-left: 40px;
+}
+.Text1 {
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+.RecordBody {
+  background-color: #f3f4f6;
+  height: 100vmax;
+  padding-left: 100px;
+  padding: top 5px;
+  font-family: sans-serif;
+}
+.RecordsType {
+  width: 282px;
+  height: 120vh;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+.RecordsInput {
+  width: 250px;
+  height: 23px;
+  border-radius: 10px;
+  border: grey solid;
+  display: flex;
+}
+.checkbox {
+  border-radius: 500px;
+}
+.CheckDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 13px;
+}
+.checkdiv {
+  display: flex;
+}
+.Minordiv {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 15px;
+  font-family: sans-serif;
+}
+.color {
+  color: grey;
+}
+.Types {
+  display: flex;
+  padding-left: 15px;
+  padding-top: 28px;
+}
+.TypesText {
+  padding-left: 10px;
+}
+.RecordsText2 {
+  padding-left: 5px;
+  font-family: sans-serif;
+}
+.FD {
+  padding-left: 10px;
+}
+.AddCategory {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+.Torol {
+  text-align: center;
+}
+.Category {
+  padding-bottom: 2px;
+}
+.RecordsMainDiv {
+  display: flex;
+  flex-direction: column;
+}
+.addicon {
+  display: flex;
+  justify-content: center;
+}
+.Dashboard {
+  font-family: sans-serif;
+  font-weight: 400;
+  size: 16px;
+  padding-left: 25px;
+}
+.geldicon {
+  padding-left: 100px;
+}
+.RecordsText {
+  font-family: sans-serif;
+  font-weight: 700;
+  size: 16px;
+  padding-left: 25px;
+}
+.RecordsIcon {
+  display: flex;
+  justify-content: end;
+}
+.InputDiv {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.Profile{
+  padding-right: 70px;
+  display: flex;
+  align-items: center;
+}
+.ARD{
+  padding-right: 20px;
+}
+.user{
+  display: flex;
+}
+.avatar{
+  display: flex;
+}
+.AddRecord{
+  width:  803px;
+  height: 34px;
+  padding: 20px 24px 20px 24px;
+  gap: 0px;
+  border-radius: 1000000px;
+  border: red solid;
+  justify-content: space-between;
+  opacity: 0px;
+  font-family: sans-serif;
+
+}
+.IncomeButton{
+  width: 172px;
+height: 40px;
+gap: 4px;
+border-radius: 20px 0px 0px 0px;
+opacity: 0px;
+}
+.ExpenseButton{
+  width: 172px;
+height:40px;
+padding: 0px var(--PaddingSM) 0px var(--PaddingSM);
+gap: 4px;
+border-radius: 20px 0px 0px 0px;
+opacity: 0px;
+}
+.AmountInput  {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 348px;
+height: 50px;
+opacity: 0px;
+
+
+}
