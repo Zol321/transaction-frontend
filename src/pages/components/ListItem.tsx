@@ -1,4 +1,7 @@
 import HouseSvg from "../icons/houseSvg";
+import axios from "axios";
+import { RecordModal } from "./Modal";
+import { DeleteConformation } from "./DeleteConformation";
 
 type Transaction = {
   amount: number;
@@ -18,20 +21,33 @@ export const ListItem = ({ transaction }: { transaction: Transaction }) => {
   const diffrentMs = Number(date2) - Number(date1);
 
   const diffrentHours = Math.round(diffrentMs / (1000 * 60 * 60));
-  console.log(diffrentHours);
+
+  const whichTransaction = (transactionType: string) => {
+    if (transactionType === "income") {
+      return "green";
+    } else {
+      return "red";
+    }
+  };
 
   return (
     <div className="cat">
-      <HouseSvg />
       <div className="dog">
-        <div className="Torol">
+        <HouseSvg />
+        <div className="Torol" style={{ marginLeft: "12px" }}>
           <div className="trans">{transaction.category}</div>
           <div className="time">{diffrentHours}</div>
         </div>
       </div>
-
-      <div className="LastRecordAmount">
-        <div className="Amount">{transaction.amount}</div>
+      <div style={{ color: whichTransaction(transaction.transactionType) }}>
+        {transaction.transactionType === "income" ? "" : "-"}
+        {transaction.amount}
+      </div>
+      <div>
+        <RecordModal edit={true} transaction={transaction} />
+      </div>
+      <div>
+        <DeleteConformation transaction={transaction}/>
       </div>
     </div>
   );

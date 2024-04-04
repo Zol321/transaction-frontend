@@ -1,10 +1,6 @@
 import axios from "axios";
-import Lists from "./Lists";
 import { useEffect, useState } from "react";
 import { ListItem } from "./ListItem";
-
-import MinusCash from "../icons/MinusCash";
-import HouseSvg from "../icons/houseSvg";
 
 const LastRecords = () => {
   const [data, setData] = useState([]);
@@ -20,17 +16,16 @@ const LastRecords = () => {
   console.log(data);
   return (
     <div className="MainContainer">
-      <div>
+      <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
         <div className="Header">
-          <h1> Last Records</h1>
+          <h1>Last Records</h1>
         </div>
-        <div className="MainBody">
-          
+        <div className="list-container">
           {data.map((transaction, index) => (
             <ListItem key={index} transaction={transaction} />
           ))}
         </div>
-      </div>
+      </div>  
     </div>
   );
 };

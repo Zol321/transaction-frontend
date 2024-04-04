@@ -112,14 +112,12 @@
 .ExIn {
   margin-top: 50px;
   display: flex;
-  justify-content: space-between;
 }
 .main {
   display: flex;
   flex-direction: row;
   margin-top: 30px;
   justify-content: center;
-  justify-content: space-evenly;
 }
 .avatar {
   align-items: center;
@@ -200,14 +198,14 @@
   align-items: center;
 }
 .Header {
-  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1230px;
   height: 70px;
-  padding-left: 15px;
   background-color: white;
   border: rgba(226, 232, 240, 1) solid;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
 }
 
 .bodydiv {
@@ -222,12 +220,15 @@
   width: 1200px;
   height: 70px;
   padding-left: 15px;
-  margin-top: 10px;
+  padding-right: 15px;
+  margin-left: 200px;
+  margin-top: 50px;
   background-color: white;
   border: rgba(226, 232, 240, 1) solid;
   border-radius: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .dog {
   display: flex;
@@ -248,22 +249,19 @@
 }
 .LastRecordAmount {
   display: flex;
-  justify-content: end;
-  padding-left: 1025px;
+  width: 80vw;
+  align-items: space-between;
   line-height: 16px;
-  color: green;
   text-align: center;
 }
-.Amount {
-  display: flex;
-  justify-content: end;
-}
+
 .RecordNavbar {
   display: flex;
   text-align: center;
-  align-items: center;
   height: 75px;
   padding-left: 40px;
+  width: 96vw;
+
 }
 .Text1 {
   font-family: sans-serif;
@@ -276,10 +274,11 @@
   padding-left: 100px;
   padding: top 5px;
   font-family: sans-serif;
+  display: flex;
 }
 .RecordsType {
   width: 282px;
-  height: 120vh;
+  height: 90vh;
   background-color: white;
   border-radius: 10px;
   margin-top: 50px;
@@ -350,7 +349,7 @@
 .Dashboard {
   font-family: sans-serif;
   font-weight: 400;
-  size: 16px;
+  size: 18px;
   padding-left: 25px;
 }
 .geldicon {
@@ -371,54 +370,109 @@
   display: flex;
   justify-content: center;
 }
-.Profile{
+.Profile {
   padding-right: 70px;
   display: flex;
   align-items: center;
 }
-.ARD{
+.ARD {
   padding-right: 20px;
 }
-.user{
+.user {
   display: flex;
 }
-.avatar{
+.avatar {
   display: flex;
 }
-.AddRecord{
-  width:  803px;
+.AddRecord {
+  width: 803px;
   height: 34px;
   padding: 20px 24px 20px 24px;
   gap: 0px;
   border-radius: 1000000px;
-  border: red solid;
   justify-content: space-between;
   opacity: 0px;
   font-family: sans-serif;
-
 }
-.IncomeButton{
+.IncomeButton {
   width: 172px;
-height: 40px;
-gap: 4px;
-border-radius: 20px 0px 0px 0px;
-opacity: 0px;
+  height: 40px;
+  gap: 4px;
+  border-radius: 20px 0px 0px 0px;
+  opacity: 0px;
 }
-.ExpenseButton{
+.ExpenseButton {
   width: 172px;
-height:40px;
-padding: 0px var(--PaddingSM) 0px var(--PaddingSM);
-gap: 4px;
-border-radius: 20px 0px 0px 0px;
-opacity: 0px;
+  height: 40px;
+  padding: 0px var(--PaddingSM) 0px var(--PaddingSM);
+  gap: 4px;
+  border-radius: 20px 0px 0px 0px;
+  opacity: 0px;
 }
-.AmountInput  {
+.AmountInput {
   display: flex;
   justify-content: center;
   margin-top: 30px;
   width: 348px;
-height: 50px;
-opacity: 0px;
+  height: 50px;
+  opacity: 0px;
+  padding-left: 20px;
+}
+.AddButton{
+  width: 348px;
+  height: 40px;
+  border-radius: 40px;
+  background-color:#0166ff;
+  border: rgba(209, 213, 219, 1) solid;
+  display: flex;
+  justify-content: center;  
+  margin-top: 20px;
+  align-items: center;
+  color: white;
+}
+.NoteInput{
+width: 349px;
+height: 280px;
+display: flex;
+justify-content: center;
+border: rgba(209, 213, 219, 1) solid;
+border-radius: 10px;
+}
+.NoteStyle{
+font-family: sans-serif;
+display: flex;
+justify-content: center;
+font-weight: 200;
+}
+.Style1{
+width: 424px;
+height: 444px;
+display: flex;
 
-
+justify-content: center;
+}
+.Style2{
+  display: "flex";
+  justify-content: center;
+margin-top: 5px;
+}
+.Style3{
+  width: "424px";
+  height: "444px";
+  display: "flex";
+ flex-direction: column;
+}
+.Style4{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.Style5{
+  display: "flex";
+justify-content: center;
+padding-top: 15px;
+}
+.Call{
+  margin-top: 40px;
+  padding-left: 200px;
 }

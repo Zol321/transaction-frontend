@@ -39,7 +39,7 @@ const Dashboard = () => {
 
         <div className="Main">
           <div className="main">
-            <div className="ExInßß">
+            <div className="ExIn">
               <GeldCard />
               <GeldExIn />
             </div>
