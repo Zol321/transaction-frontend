@@ -112,6 +112,8 @@
 .ExIn {
   margin-top: 50px;
   display: flex;
+  align-items: center;
+  gap: 200px;
 }
 .main {
   display: flex;
@@ -141,9 +143,7 @@
   flex-direction: row;
   font-family: sans-serif;
 }
-.InExContainer {
-  display: flex;
-}
+
 .Incomediv {
   width: 384px;
   height: 216px;
@@ -227,7 +227,7 @@
   border: rgba(226, 232, 240, 1) solid;
   border-radius: 10px;
   display: flex;
-  align-items: center;
+  align-items:  center;
   justify-content: space-between;
 }
 .dog {
@@ -277,7 +277,7 @@
   display: flex;
 }
 .RecordsType {
-  width: 282px;
+  width: 310px;
   height: 90vh;
   background-color: white;
   border-radius: 10px;
@@ -444,13 +444,7 @@ display: flex;
 justify-content: center;
 font-weight: 200;
 }
-.Style1{
-width: 424px;
-height: 444px;
-display: flex;
-
-justify-content: center;
-}
+  
 .Style2{
   display: "flex";
   justify-content: center;
@@ -470,9 +464,18 @@ align-items: center;
 .Style5{
   display: "flex";
 justify-content: center;
-padding-top: 15px;
 }
 .Call{
   margin-top: 40px;
   padding-left: 200px;
+}
+.RecordHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1230px;
+  height: 70px;
+  background-color: white;
+  border: rgba(226, 232, 240, 1) solid;
+  border-radius: 10px;
 }

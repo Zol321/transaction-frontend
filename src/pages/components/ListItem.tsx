@@ -1,7 +1,6 @@
 import HouseSvg from "../icons/houseSvg";
-import axios from "axios";
 import { RecordModal } from "./Modal";
-import { DeleteConformation } from "./DeleteConformation";
+import { DeleteConfirmation } from "./DeleteConformation";
 
 type Transaction = {
   amount: number;
@@ -47,7 +46,7 @@ export const ListItem = ({ transaction }: { transaction: Transaction }) => {
         <RecordModal edit={true} transaction={transaction} />
       </div>
       <div>
-        <DeleteConformation transaction={transaction}/>
+        <DeleteConfirmation transaction={transaction}/>
       </div>
     </div>
   );

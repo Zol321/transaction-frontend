@@ -30,14 +30,17 @@ const options = {
 
 function DoughChart() {
   return (
+    <div style={{width:"630px", border:"rgba(226, 232, 240, 1) solid", borderRadius:"10px",display:"flex", justifyContent:"center", height:"370px", alignItems:"center", backgroundColor:"white"}} >
+
+    <div>
+
     <div
       style={{
         display: "flex",
         flexDirection: "column",
         width: "588px",
         borderRadius: "12px",
-        border: "1px solid grey",
-
+        border: "rgba(226, 232, 240, 1) solid",
       }}>
       <div
         style={{
@@ -57,7 +60,7 @@ function DoughChart() {
           height: "1px",
           margin: "10px 0",
         }}
-      />
+        />
       <div
         style={{
           display: "flex",
@@ -68,10 +71,12 @@ function DoughChart() {
           data={dataSet}
           options={options}
           style={{ maxHeight: "156px", maxWidth: "156px" }}
-        />
+          />
         <Labels />
       </div>
     </div>
+          </div>
+</div>
   );
 }
 
@@ -90,7 +95,7 @@ const Labels = () => {
                 margin: "5px",
                 borderRadius: "50%",
               }}
-            />
+              />
             <p style={{ marginRight: "10px" }}>{category}</p>
           </div>
           <div style={{ width: "100px" }}>{expenses[index]}$</div>

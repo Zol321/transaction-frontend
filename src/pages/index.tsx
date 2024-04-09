@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import React from "react";
 import GeldIcon from "./icons/GeldIcon";
 import GeldExIn from "./components/GeldExIn";
-import Record from "./icons/Record";
 import GeldCard from "./components/GeldCard";
 import DoughChart from "./components/DoughChart";
 import LastRecords from "./components/LastRecords";
@@ -31,8 +30,8 @@ const Dashboard = () => {
 
           <div className="Profile">
             <div className="ARD">
-            <Record />
-            </div>
+
+                </div>
             <ProfileSvg/>
           </div>
         </div>
@@ -40,7 +39,7 @@ const Dashboard = () => {
         <div className="Main">
           <div className="main">
             <div className="ExIn">
-              <GeldCard />
+              <GeldCard   />
               <GeldExIn />
             </div>
           </div>

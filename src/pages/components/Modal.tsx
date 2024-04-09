@@ -1,4 +1,4 @@
-/* eslint-disable max-lines */
+import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import AddIcon from "../icons/addIcon";
@@ -7,7 +7,6 @@ import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
 import EditIcon from "@mui/icons-material/Edit";
-
 
 const style = {
   position: "absolute",
@@ -31,32 +30,25 @@ export const RecordModal = ({ edit, transaction }) => {
   const [categoryType, setCategoryType] = useState("");
 
   const records = async () => {
-    const result = await axios.post(
-      "http://localhost:8080/create-transaction",
-      {
-        category: categoryType,
-        amount,
-        createdAt: time,
-        note,
-        transactionType,
-      }
-    );
-    console.log(result);
-    if (result.statusText === "OK") router.push("/records");
-  };
-
-  const updateTransaction = async () => {
-    const result = await axios.post(
-      `http://localhost:8080/update-transaction?transactionId=${transaction._id}`,
-      {
-        category: categoryType,
-        amount,
-        createdAt: time,
-        note,
-        transactionType,
-      }
+    try {
+      const result = await axios.post(
+        "http://localhost:8080/create-transaction",
+        {
+          category: categoryType,
+          amount,
+          createdAt: time,
+          note,
+          transactionType,
+        }
       );
-      console.log(result)
+      console.log(result);
+      if (result.statusText === "OK") {
+        router.push("/records");
+        handleModalClose();
+      }
+    } catch (error) {
+      console.error("Error adding record:", error);
+    }
   };
 
   console.log(transactionType, note, amount, time);
@@ -65,13 +57,18 @@ export const RecordModal = ({ edit, transaction }) => {
     setTransactionType(type);
   };
 
-  const handleModal = () => {
-    setOpen((prev) => !prev);
+  const handleModalOpen = () => {
+    setOpen(true);
   };
+
+  const handleModalClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="addicon">
-      <div onClick={handleModal}>{edit ? <EditIcon /> : <AddIcon />}</div>
-      <Modal open={open} onClose={handleModal}>
+      <div onClick={handleModalOpen}>{edit ? <EditIcon /> : <AddIcon />}</div>
+      <Modal open={open} onClose={handleModalClose}>
         <Box sx={style}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -84,16 +81,18 @@ export const RecordModal = ({ edit, transaction }) => {
                   value={transactionType}
                   exclusive
                   onChange={handleChange}
-                  aria-label="Platform"
-                >
-                  <div className="Style5">
+                  aria-label="Platform">
+                    
                     <ToggleButton value="income" className="IncomeButton">
                       Income
                     </ToggleButton>
+<div style={{paddingLeft:"30x", }}>
                     <ToggleButton value="expense" className="ExpenseButton">
                       Expense
                     </ToggleButton>
-                  </div>
+</div>
+
+
                 </ToggleButtonGroup>
                 <input
                   className="AmountInput"
@@ -111,7 +110,11 @@ export const RecordModal = ({ edit, transaction }) => {
                   <div className="Style4"></div>
                   <select
                     onChange={(e) => setCategoryType(e.target.value)}
-                    style={{ width: "348px", height: "48px", display: "flex" }}
+                    style={{
+                      width: "375  px",
+                      height: "48px",
+                      display: "flex",
+                    }}
                   >
                     <option value="food">Food & Drinks</option>
                     <option value="shopping">Shopping</option>
@@ -144,22 +147,20 @@ export const RecordModal = ({ edit, transaction }) => {
                     onChange={(e) => setTime(e.target.value)}
                   />
                 </div>
-                {!edit ? (
-                  <button className="AddButton" onClick={() => records()}>
-                    Add Record
-                  </button>
-                ) : (
-                  <button className="AddButton" onClick={() => updateTransaction()}>Edit Record</button>
-                )}
+                <button className="AddButton" onClick={records}>
+                  Add Record
+                </button>
               </div>
-              <div className="style1">
-                <h3 className="NoteStyle"> Note</h3>
-                <div className="Style2">
-                  <input
-                    className="NoteInput"
-                    onChange={(e) => setNote(e.target.value)}
-                    placeholder="Write here"
-                  />
+              <div style={{ paddingLeft: "70px" }}>
+                <div className="style1">
+                  <h3 className="NoteStyle"> Note</h3>
+                  <div className="Style2">
+                    <input
+                      className="NoteInput"
+                      onChange={(e) => setNote(e.target.value)}
+                      placeholder="Write here"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
