@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -20,7 +21,18 @@ const style = {
   p: 4,
 };
 
-export const RecordModal = ({ edit, transaction }) => {
+type Transaction = {
+  amount: number;
+  category: string;
+  createdAt: Date | string;
+  note: string;
+  incomeTitle: string;
+  transactionType: string;
+  __v: number;
+  _id: string;
+};
+
+export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?: Transaction}) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [transactionType, setTransactionType] = useState("income");
@@ -32,7 +44,7 @@ export const RecordModal = ({ edit, transaction }) => {
   const records = async () => {
     try {
       const result = await axios.post(
-        "http://localhost:8080/create-transaction",
+        "https://transaction-backend-resb.onrender.com/create-transaction",
         {
           category: categoryType,
           amount,
@@ -50,6 +62,27 @@ export const RecordModal = ({ edit, transaction }) => {
       console.error("Error adding record:", error);
     }
   };
+  const editRecord = async () => {
+    try {
+      const result = await axios.post(
+        `https://transaction-backend-resb.onrender.com/update-transaction/?transactionId=${transaction?._id}`,
+        {
+          category: categoryType,
+          amount,
+          createdAt: time,
+          note,
+          transactionType,
+        }
+      );
+      console.log(result);
+      if (result.statusText === "OK") {
+        router.push("/records");
+        handleModalClose();
+      }
+    } catch (error) {
+      console.error("Error adding record:", error);
+    }
+  }
 
   console.log(transactionType, note, amount, time);
 
@@ -81,18 +114,16 @@ export const RecordModal = ({ edit, transaction }) => {
                   value={transactionType}
                   exclusive
                   onChange={handleChange}
-                  aria-label="Platform">
-                    
-                    <ToggleButton value="income" className="IncomeButton">
-                      Income
-                    </ToggleButton>
-<div style={{paddingLeft:"30x", }}>
+                  aria-label="Platform"
+                >
+                  <ToggleButton value="income" className="IncomeButton">
+                    Income
+                  </ToggleButton>
+                  <div style={{ paddingLeft: "30x" }}>
                     <ToggleButton value="expense" className="ExpenseButton">
                       Expense
                     </ToggleButton>
-</div>
-
-
+                  </div>
                 </ToggleButtonGroup>
                 <input
                   className="AmountInput"
@@ -147,9 +178,19 @@ export const RecordModal = ({ edit, transaction }) => {
                     onChange={(e) => setTime(e.target.value)}
                   />
                 </div>
-                <button className="AddButton" onClick={records}>
-                  Add Record
-                </button>
+                {!edit ? (
+                  <>
+                    <button className="AddButton" onClick={records}>
+                      Add Record
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button className="AddButton" onClick={editRecord}>
+                      Edit Record
+                    </button>
+                  </>
+                )}
               </div>
               <div style={{ paddingLeft: "70px" }}>
                 <div className="style1">

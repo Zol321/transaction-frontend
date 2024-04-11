@@ -7,7 +7,7 @@ export const RecordBody = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:8080/get-transaction");
+      const res = await axios.get("https://transaction-backend-resb.onrender.com/get-transaction");
       setData(res.data);
     };
     fetchData();

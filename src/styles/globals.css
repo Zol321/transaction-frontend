@@ -280,6 +280,7 @@
   width: 310px;
   height: 90vh;
   background-color: white;
+  border: rgba(226, 232, 240, 1) solid;
   border-radius: 10px;
   margin-top: 50px;
 }
@@ -400,11 +401,11 @@
   gap: 4px;
   border-radius: 20px 0px 0px 0px;
   opacity: 0px;
+  border: rgba(226, 232, 240, 1) solid;
 }
 .ExpenseButton {
   width: 172px;
   height: 40px;
-  padding: 0px var(--PaddingSM) 0px var(--PaddingSM);
   gap: 4px;
   border-radius: 20px 0px 0px 0px;
   opacity: 0px;
@@ -455,6 +456,7 @@ margin-top: 5px;
   height: "444px";
   display: "flex";
  flex-direction: column;
+ padding-left: 26px;
 }
 .Style4{
 display: flex;
@@ -478,4 +480,17 @@ justify-content: center;
   background-color: white;
   border: rgba(226, 232, 240, 1) solid;
   border-radius: 10px;
+}
+.Record{
+  display: flex;
+  align-items: center;
+  width: 1230px;
+  height: 70px;
+  background-color: white;
+  border: rgba(226, 232, 240, 1) solid;
+  border-radius: 10px;
+  justify-content: center;
+  margin-left: 200px;
+  margin-top: 55px;
+  font-weight: 900  ;
 }

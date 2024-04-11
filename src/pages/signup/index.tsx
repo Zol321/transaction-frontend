@@ -9,14 +9,17 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   console.log(name, email, password);
 
-  const login = async () => {
-    const result = await axios.post("http://localhost:8080/signup", {
-      name,
-      email,
-      password,
-    });
+  const signUp = async () => {
+    const result = await axios.post(
+      "https://transaction-backend-resb.onrender.com/signup",
+      {
+        name,
+        email,
+        password,
+      }
+    );
     console.log(result);
-    if (result.statusText === "OK") router.push("/login");
+    if (result.status === 200) router.push("/login");
   };
 
   return (
@@ -53,7 +56,7 @@ const SignUp = () => {
                 className="input"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
-              <button className="sgnup" onClick={login}>
+              <button className="sgnup" onClick={signUp}>
                 Sign Up
               </button>
             </div>

@@ -38,9 +38,12 @@ export const ListItem = ({ transaction }: { transaction: Transaction }) => {
           <div className="time">{diffrentHours}</div>
         </div>
       </div>
+      <div style={{display:"flex", alignItems:"center"}}>
       <div style={{ color: whichTransaction(transaction.transactionType) }}>
+        <div style={{marginRight:"30px"}}>
         {transaction.transactionType === "income" ? "" : "-"}
         {transaction.amount}
+        </div>
       </div>
       <div>
         <RecordModal edit={true} transaction={transaction} />
@@ -49,5 +52,6 @@ export const ListItem = ({ transaction }: { transaction: Transaction }) => {
         <DeleteConfirmation transaction={transaction}/>
       </div>
     </div>
+      </div>
   );
 };

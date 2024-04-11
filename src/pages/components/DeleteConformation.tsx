@@ -9,13 +9,26 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 import { useState } from "react";
 
-export const DeleteConfirmation = ({ transaction }) => {
+type Transaction = {
+  amount: number;
+  category: string;
+  createdAt: Date | string;
+  note: string;
+  incomeTitle: string;
+  transactionType: string;
+  __v: number;
+  _id: string;
+};
+
+export const DeleteConfirmation = ({ transaction }: {edit?:boolean, transaction?:Transaction}) => {
   const deleteTransaction = async () => {
     const response = await axios.delete(
-      `http://localhost:8080/delete-transaction?transactionId=${transaction._id}`
+      `https://transaction-backend-resb.onrender.com/delete-transaction?transactionId=${transaction?._id}`
     );
     console.log(response);
   };
+
+  
 
   const [open, setOpen] = useState(false);
 
