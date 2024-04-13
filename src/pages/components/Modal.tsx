@@ -41,7 +41,7 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
   const [time, setTime] = useState("");
   const [categoryType, setCategoryType] = useState("");
 
-  const records = async () => {
+  const   records = async () => {
     try {
       const result = await axios.post(
         "https://transaction-backend-resb.onrender.com/create-transaction",
@@ -150,14 +150,14 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
                     <option value="food">Food & Drinks</option>
                     <option value="shopping">Shopping</option>
                     <option value="bills">Bills</option>
-                    <option value="clothing">Clothing</option>
-                    <option value="food">Vechile</option>
-                    <option value="shopping">Life & Entertaiment</option>
-                    <option value="bills">Communication, Pc</option>
-                    <option value="clothing">Financial expenses</option>
-                    <option value="shopping">Investments</option>
-                    <option value="bills">Income</option>
-                    <option value="clothing">Others</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Vechile">Vechile</option>
+                    <option value="Life & Entertaiment">Life & Entertaiment</option>
+                    <option value="Communication, Pc">Communication, Pc</option>
+                    <option value="Financial expenses">Financial expenses</option>
+                    <option value="Investments">Investments</option>
+                    <option value="Income">Income</option>
+                    <option value="Others">Others</option>
                   </select>
                 </div>
                 <div

@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
 import { ListItem } from "./ListItem";
-import axios from "axios";
 
-export const RecordBody = () => {
-  const [data, setData] = useState([]);
+type Transaction = {
+  amount: number;
+  category: string;
+  createdAt: Date | string;
+  note: string;
+  incomeTitle: string;
+  transactionType: string;
+  __v: number;
+  _id: string;
+};
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("https://transaction-backend-resb.onrender.com/get-transaction");
-      setData(res.data);
-    };
-    fetchData();
-  }, []);
+export const RecordBody = ({filteredData}:{filteredData: Transaction[]}) => {
 
   return (
     <div>
-      {data.map((transaction, index) => (
+      {filteredData.map((transaction, index) => (
         <ListItem key={index} transaction={transaction} />
       ))}
     </div>

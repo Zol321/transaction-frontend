@@ -2,6 +2,7 @@ import HouseSvg from "../icons/houseSvg";
 import { RecordModal } from "./Modal";
 import { DeleteConfirmation } from "./DeleteConformation";
 
+
 type Transaction = {
   amount: number;
   category: string;

@@ -222,7 +222,7 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-left: 200px;
-  margin-top: 50px;
+  margin-top: 25px;
   background-color: white;
   border: rgba(226, 232, 240, 1) solid;
   border-radius: 10px;
@@ -277,8 +277,8 @@
   display: flex;
 }
 .RecordsType {
-  width: 310px;
-  height: 90vh;
+  width: 300px;
+  height: 93vh;
   background-color: white;
   border: rgba(226, 232, 240, 1) solid;
   border-radius: 10px;
@@ -297,7 +297,7 @@
 .CheckDiv {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   padding-left: 13px;
 }
 .checkdiv {
@@ -364,7 +364,7 @@
 }
 .RecordsIcon {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .InputDiv {
   margin-top: 10px;
