@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: row;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 .loginC {
   background-color: white;
   width: 50vw;
@@ -14,9 +18,9 @@
 }
 .login {
   display: flex;
-  justify-content: center;
+  justify-content: center;  
   flex-direction: column;
-  align-items: center;
+align-items: center;
   padding-top: 25%;
 }
 .wlcm {
@@ -41,13 +45,6 @@
   background: var(--d--colors-base-base-100, #f3f4f6);
   width: 300px;
   height: 30px;
-}
-.input {
-  gap: 13px;
-  border-radius: var(--t--borders-radius-rounded-lg, 8px);
-  border: 1px solid var(--d--colors-base-base-300, #d1d5db);
-  background: var(--d--colors-base-base-100, #f3f4f6);
-  width: 300px;
 }
 .inputc {
   display: flex;
@@ -80,6 +77,8 @@
 }
 .ancher {
   color: #0166ff;
+  cursor: pointer;
+  padding-left: 10px;
 }
 .to_login {
   border-radius: var(--t--borders-radius-rounded-lg, 8px);
@@ -113,7 +112,7 @@
   margin-top: 50px;
   display: flex;
   align-items: center;
-  gap: 200px;
+  gap: 40px;
 }
 .main {
   display: flex;
@@ -278,7 +277,7 @@
 }
 .RecordsType {
   width: 300px;
-  height: 93vh;
+  height: 83vh;
   background-color: white;
   border: rgba(226, 232, 240, 1) solid;
   border-radius: 10px;
@@ -299,6 +298,9 @@
   flex-direction: column;
   align-items: flex-start;
   padding-left: 13px;
+  padding-top:20px;
+  padding-bottom: 20px;
+  gap: 30px;
 }
 .checkdiv {
   display: flex;
@@ -322,6 +324,7 @@
   padding-left: 10px;
 }
 .RecordsText2 {
+  padding-top: 20px;
   padding-left: 5px;
   font-family: sans-serif;
 }
@@ -438,12 +441,15 @@ display: flex;
 justify-content: center;
 border: rgba(209, 213, 219, 1) solid;
 border-radius: 10px;
+margin-top: 20px;
+padding-left: 10px;
+padding-top: 10px;
 }
 .NoteStyle{
 font-family: sans-serif;
 display: flex;
 justify-content: center;
-font-weight: 200;
+font-weight: 200; 
 }
   
 .Style2{
@@ -493,4 +499,4 @@ justify-content: center;
   margin-left: 200px;
   margin-top: 55px;
   font-weight: 900  ;
-}
+};

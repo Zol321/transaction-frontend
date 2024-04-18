@@ -6,7 +6,7 @@ type Transaction = {
   createdAt: Date | string;
   note: string;
   incomeTitle: string;
-  transactionType: string;
+  transactionType: string
   __v: number;
   _id: string;
 };

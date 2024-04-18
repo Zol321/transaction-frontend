@@ -26,7 +26,7 @@ const Login = () => {
                
             <h1 className="wlcm">Welcome back</h1>
             <h3 className="wlcm_bck">
-              Welcome back, please enter your details{" "}
+              Welcome back, please enter your details
             </h3>
             <div className="inputc">
               <input

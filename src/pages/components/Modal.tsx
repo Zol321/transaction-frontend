@@ -32,7 +32,13 @@ type Transaction = {
   _id: string;
 };
 
-export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?: Transaction}) => {
+export const RecordModal = ({
+  edit,
+  transaction,
+}: {
+  edit: boolean;
+  transaction?: Transaction;
+}) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [transactionType, setTransactionType] = useState("income");
@@ -41,7 +47,7 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
   const [time, setTime] = useState("");
   const [categoryType, setCategoryType] = useState("");
 
-  const   records = async () => {
+  const records = async () => {
     try {
       const result = await axios.post(
         "https://transaction-backend-resb.onrender.com/create-transaction",
@@ -74,6 +80,7 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
           transactionType,
         }
       );
+      
       console.log(result);
       if (result.statusText === "OK") {
         router.push("/records");
@@ -82,7 +89,7 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
     } catch (error) {
       console.error("Error adding record:", error);
     }
-  }
+  };
 
   console.log(transactionType, note, amount, time);
 
@@ -125,9 +132,19 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
                     </ToggleButton>
                   </div>
                 </ToggleButtonGroup>
+                <div
+                  style={{
+                    fontFamily: "sans-serif",
+                    marginBottom: "-20px",
+                    display: "flex",
+                    marginTop: "10px",
+                  }}
+                >
+                  Amount
+                </div>
                 <input
                   className="AmountInput"
-                  placeholder="Amount"
+                  placeholder="Amount"  
                   onChange={(e) => setAmount(Number(e.target.value))}
                 />
                 <div
@@ -137,22 +154,25 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
                     paddingTop: "10px",
                   }}
                 >
-                  <p style={{ fontFamily: "sans-serif" }}> Category </p>
-                  <div className="Style4"></div>
+                  <p style={{ fontFamily: "sans-serif", paddingTop: "10px" }}>
+                    {" "}
+                    Category{" "}
+                  </p>
                   <select
                     onChange={(e) => setCategoryType(e.target.value)}
                     style={{
-                      width: "375  px",
+                      width: "375px",
+                      marginTop: "10px",
                       height: "48px",
                       display: "flex",
                     }}
                   >
-                    <option value="food">Food & Drinks</option>
+                    <option value="Food & Drinks">Food & Drinks</option>
                     <option value="shopping">Shopping</option>
                     <option value="bills">Bills</option>
                     <option value="Clothing">Clothing</option>
                     <option value="Vechile">Vechile</option>
-                    <option value="Life & Entertaiment">Life & Entertaiment</option>
+                    <option value="Life & Entertaiment">  Life & Entertaiment</option>
                     <option value="Communication, Pc">Communication, Pc</option>
                     <option value="Financial expenses">Financial expenses</option>
                     <option value="Investments">Investments</option>
@@ -163,8 +183,9 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
                 <div
                   style={{
                     fontFamily: "sans-serif",
-                    paddingTop: "20px",
-                    paddingLeft: "30px",
+                    display: "flex",
+                    marginTop: "20px",
+                    justifyContent: "center",
                   }}
                 >
                   Date
@@ -174,7 +195,7 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
                 >
                   <input
                     type="date"
-                    style={{ width: "168px", height: "48px" }}
+                    style={{ width: "168px", height: "48px", marginTop: "5px" }}
                     onChange={(e) => setTime(e.target.value)}
                   />
                 </div>
@@ -183,7 +204,7 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
                     <button className="AddButton" onClick={records}>
                       Add Record
                     </button>
-                  </>
+                  </>  
                 ) : (
                   <>
                     <button className="AddButton" onClick={editRecord}>
@@ -196,10 +217,10 @@ export const RecordModal = ({ edit, transaction }: {edit: boolean, transaction?:
                 <div className="style1">
                   <h3 className="NoteStyle"> Note</h3>
                   <div className="Style2">
-                    <input
+                    <textarea
                       className="NoteInput"
                       onChange={(e) => setNote(e.target.value)}
-                      placeholder="Write here"
+                      placeholder="Write your note here..."
                     />
                   </div>
                 </div>

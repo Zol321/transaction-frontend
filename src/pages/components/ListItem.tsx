@@ -2,7 +2,6 @@ import HouseSvg from "../icons/houseSvg";
 import { RecordModal } from "./Modal";
 import { DeleteConfirmation } from "./DeleteConformation";
 
-
 type Transaction = {
   amount: number;
   category: string;
@@ -15,12 +14,13 @@ type Transaction = {
 };
 
 export const ListItem = ({ transaction }: { transaction: Transaction }) => {
-  const date1 = new Date(transaction.createdAt);
-  const date2 = new Date();
+  const timestamp = new Date(transaction.createdAt);
+  const year = timestamp.getFullYear();
+  const month = String(timestamp.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+  const day = String(timestamp.getDate()).padStart(2, "0");
 
-  const diffrentMs = Number(date2) - Number(date1);
-
-  const diffrentHours = Math.round(diffrentMs / (1000 * 60 * 60));
+  const formattedDate = `${year}/${month}/${day}`;
+  console.log(formattedDate); // Output: "2024/04/18"
 
   const whichTransaction = (transactionType: string) => {
     if (transactionType === "income") {
@@ -36,23 +36,26 @@ export const ListItem = ({ transaction }: { transaction: Transaction }) => {
         <HouseSvg />
         <div className="Torol" style={{ marginLeft: "12px" }}>
           <div className="trans">{transaction.category}</div>
-          <div className="time">{diffrentHours}</div>
+          <div className="time">{formattedDate}</div>
+        </div>
+        <div style={{paddingLeft:"20px", display:"flex", alignItems:"center"}}>
+     {transaction.note}
         </div>
       </div>
-      <div style={{display:"flex", alignItems:"center"}}>
-      <div style={{ color: whichTransaction(transaction.transactionType) }}>
-        <div style={{marginRight:"30px"}}>
-        {transaction.transactionType === "income" ? "" : "-"}
-        {transaction.amount}
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ color: whichTransaction(transaction.transactionType) }}>
+          <div style={{ marginRight: "30px" }}>
+            {transaction.transactionType === "income" ? "" : "-"}
+            {transaction.amount}
+          </div>
         </div>
-      </div>
-      <div>
-        <RecordModal edit={true} transaction={transaction} />
-      </div>
-      <div>
-        <DeleteConfirmation transaction={transaction}/>
+        <div>
+          <RecordModal edit={true} transaction={transaction} />
+        </div>
+        <div>
+          <DeleteConfirmation transaction={transaction} />
+        </div>
       </div>
     </div>
-      </div>
   );
 };

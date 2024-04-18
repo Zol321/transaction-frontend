@@ -1,19 +1,18 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { ListItem } from "./ListItem";
 
-const LastRecords = () => {
-  const [data, setData] = useState([]);
+type Transaction = {
+  amount: number;
+  category: string;
+  createdAt: Date | string;
+  note: string;
+  incomeTitle: string;
+  transactionType: string;
+  __v: number;
+  _id: string;
+};
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("https://transaction-backend-resb.onrender.com/get-transaction");
-      setData(res.data);
-    };
-    fetchData();
-  }, []);
 
-  console.log(data);
+const LastRecords = ({transactions}: {transactions: Transaction[]}) => {
   return (
     <div className="MainContainer">
       <div style={{display:"flex", flexDirection: "column", alignItems: "center" }}>
@@ -24,7 +23,7 @@ const LastRecords = () => {
         </div>
         <div >  
           <div style={{display:'flex', flexDirection:"column" ,justifyContent:'center',paddingRight:"197px" }}>
-          {data.map((transaction, index) => (
+          {transactions.map((transaction, index) => (
             <ListItem key={index} transaction={transaction} />
           ))}
           </div>
