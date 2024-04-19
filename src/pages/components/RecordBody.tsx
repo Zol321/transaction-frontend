@@ -1,4 +1,4 @@
-import  ListItem  from "./ListItem";
+import ListItem from "./ListItem";
 
 type Transaction = {
   amount: number;
@@ -6,13 +6,16 @@ type Transaction = {
   createdAt: Date | string;
   note: string;
   incomeTitle: string;
-  transactionType: string
+  transactionType: string;
   __v: number;
   _id: string;
 };
 
-export const RecordBody = ({filteredData}:{filteredData: Transaction[]}) => {
-
+const RecordBody = ({
+  filteredData,
+}: {
+  filteredData: Transaction[];
+}) => {
   return (
     <div>
       {filteredData.map((transaction, index) => (
@@ -21,3 +24,5 @@ export const RecordBody = ({filteredData}:{filteredData: Transaction[]}) => {
     </div>
   );
 };
+
+export default RecordBody

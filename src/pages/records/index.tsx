@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import CategoryTypes from "../components/CategoryTypes";
 import GeldIcon from "../icons/GeldIcon";
 import ProfileSvg from "../icons/ProfileSvg";
-import  RecordModal  from "../components/Modal";
-import { RecordBody } from "../components/RecordBody";
+import RecordModal from "../components/Modal";
+import RecordBody from "../components/RecordBody";
 import { MouseEventHandler, useEffect, useState } from "react";
 import axios from "axios";
 
@@ -70,11 +70,18 @@ const Dashboard = () => {
           <a
             className="Dashboard"
             onClick={() => router.push("/")}
-            style={{ fontSize: "18px", cursor:"pointer" }}
+            style={{ fontSize: "18px", cursor: "pointer" }}
           >
             Dashboard
           </a>
-          <h4 style={{ fontFamily: "sans-serif", paddingLeft: "20px", cursor:"pointer", fontWeight:"400" }}>
+          <h4
+            style={{
+              fontFamily: "sans-serif",
+              paddingLeft: "20px",
+              cursor: "pointer",
+              fontWeight: "400",
+            }}
+          >
             Records
           </h4>
         </div>
@@ -101,8 +108,8 @@ const Dashboard = () => {
           >
             Records
           </h1>
-          <div style={{paddingTop:"20px"}}>
-          <RecordModal edit={false} />
+          <div style={{ paddingTop: "20px" }}>
+            <RecordModal edit={false} />
           </div>
 
           <h4 className="RecordsText2">Types</h4>
