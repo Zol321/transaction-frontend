@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import CategoryTypes from "../components/CategoryTypes";
 import GeldIcon from "../icons/GeldIcon";
 import ProfileSvg from "../icons/ProfileSvg";
-import { RecordModal } from "../components/Modal";
+import  RecordModal  from "../components/Modal";
 import { RecordBody } from "../components/RecordBody";
 import { MouseEventHandler, useEffect, useState } from "react";
 import axios from "axios";

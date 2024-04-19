@@ -32,7 +32,7 @@ type Transaction = {
   _id: string;
 };
 
-export const RecordModal = ({
+ const RecordModal = ({
   edit,
   transaction,
 }: {
@@ -232,3 +232,5 @@ export const RecordModal = ({
     </div>
   );
 };
+
+export default RecordModal

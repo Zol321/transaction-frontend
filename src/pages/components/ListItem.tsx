@@ -1,6 +1,6 @@
 import HouseSvg from "../icons/houseSvg";
-import { RecordModal } from "./Modal";
-import { DeleteConfirmation } from "./DeleteConformation";
+import RecordModal  from "./Modal";
+import DeleteConfirmation from "./DeleteConformation";
 
 type Transaction = {
   amount: number;
@@ -13,7 +13,7 @@ type Transaction = {
   _id: string;
 };
 
-export const ListItem = ({ transaction }: { transaction: Transaction }) => {
+ const ListItem = ({ transaction }: { transaction: Transaction }) => {
   const timestamp = new Date(transaction.createdAt);
   const year = timestamp.getFullYear();
   const month = String(timestamp.getMonth() + 1).padStart(2, "0"); // Months are zero-based
@@ -59,3 +59,5 @@ export const ListItem = ({ transaction }: { transaction: Transaction }) => {
     </div>
   );
 };
+
+export default ListItem

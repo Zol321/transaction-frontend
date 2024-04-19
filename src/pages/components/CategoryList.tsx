@@ -1,6 +1,6 @@
 import EyeSvg from "../icons/EyeSvg";
 
-export const CategoryList = ({ category }: { category: string }) => {
+const CategoryList = ({ category }: { category: string }) => {
   return <>
   <div className="Types">
     <EyeSvg/>
@@ -10,3 +10,5 @@ export const CategoryList = ({ category }: { category: string }) => {
   </div>
    </>
 };
+
+export default CategoryList

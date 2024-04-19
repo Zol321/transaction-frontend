@@ -20,7 +20,7 @@ type Transaction = {
   _id: string;
 };
 
-export const DeleteConfirmation = ({ transaction }: {edit?:boolean, transaction?:Transaction}) => {
+const DeleteConfirmation = ({ transaction }: {edit?:boolean, transaction?:Transaction}) => {
   const deleteTransaction = async () => {
     const response = await axios.delete(
       `https://transaction-backend-resb.onrender.com/delete-transaction?transactionId=${transaction?._id}`
@@ -72,3 +72,5 @@ export const DeleteConfirmation = ({ transaction }: {edit?:boolean, transaction?
     </>
   );
 };
+
+export default DeleteConfirmation
